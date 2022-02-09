@@ -93,7 +93,7 @@ class MovimientosToExcel:
 
 		#se crear un array que contiene la cabezera d cada columna
 
-		columnas = ["OPERADOR","TIPO DE PRODUCTO","ID MOVIIRED","DESCRIPCION","VALOR","EAN","ID OPERADOR"]
+		columnas = ["OPERADOR","TIPO DE PRODUCTO","ID MOVIIRED","DESCRIPCION","VALOR","EAN","ID OPERADOR","VIGENCIA"]
 
 		print("pasamos")
 
@@ -114,7 +114,7 @@ class MovimientosToExcel:
         #atributo del objeto ovimientosToExcel que indica que liena del archivo excel se esta iterando
 		self.fila = 1
 
-    #imprime cada atributo del objeto movimiento en cad acolumna de una fila del archivo excel
+    #imprime cada atributo del objeto movimiento en cada columna de una fila del archivo excel
 	def agregarItem(self,item):
 
 		self.ws.write(self.fila, 0, item.operator_name)
@@ -124,6 +124,8 @@ class MovimientosToExcel:
 		self.ws.write(self.fila, 4, item.valor)
 		self.ws.write(self.fila, 5, item.ean)
 		self.ws.write(self.fila, 6, item.idoperador)
+		self.ws.write(self.fila, 7, item.details_expiration)
+
 
 		self.fila = self.fila + 1
 

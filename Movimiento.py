@@ -62,12 +62,17 @@ class Movimiento(object):
 			print("entro en el byteaaray ahora es: ",type(self.idoperador) , "\n")
 		else:
 			print("\n")
-
-
-
-
+		
+		self.details_expiration = lista[0]
+		print(self.details_expiration,"Tipo De Dato ",type(self.details_expiration))
+		if isinstance(self.details_expiration, bytearray):
+			self.details_expiration = lista[7].decode()
+			print("entro en el byteaaray ahora es: ", type(self.details_expiration),"\n")
+		else:
+			print("\n") 
+    
 
     #esta linea imprime cada atributo del objeto movimiento, es decir todos lso campos de la linea del cursor que se esta iterando
 	def listar(self):
 
-		print ("METODO LISTAR""; ",self.operator_name,self.tipodeproducto,self.idmoviired,self.descripcion,self.valor,self.ean,self.idoperador,"\n\n\n\n")
+		print ("METODO LISTAR""; ",self.operator_name,self.tipodeproducto,self.idmoviired,self.descripcion,self.valor,self.ean,self.idoperador,self.details_expiration,"\n\n\n\n")

@@ -52,12 +52,12 @@ order by microservice_url;
     con=0
     #recorre el cursor
     for fila in cursor:
-        print("REGISTRO: ",con," \nRECORRIENDO CURSOR",fila,"\n")
+        print("REGISTRO: ",con," \nRECORRIENDO CURSOR \n",fila,"\n")
 
 
         #el objero movimiento tiene 5 atributos y cada uno es igualado con cada columna de la fila del cursor
         movimiento = Movimiento(fila)
-
+        print("pasamos el movimiento")
         #en listar envio el propio objero como atributo y el metdo lista rimprime en pantalla l linea del cursor que fue recuperada en el objeto movimiento
         con += 1
         movimiento.listar()
