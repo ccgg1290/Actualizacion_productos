@@ -30,12 +30,13 @@ try:
     cursor = cnx.cursor()
 
  #  query = "SELECT id, name, max_value, microservice_root, microservice_url, min_value FROM movii_nuevos_convenios.ws_operator where ID =317; "
-    query = ''' SELECT 
+    query = '''SELECT 
 operator_name AS 'OPERADOR', microservice_url AS 'TIPO DE PRODUCTO', id AS 'ID MOVIIRED', name AS 'DESCRIPCION',
 max_value AS 'VALOR', ean_code AS 'EAN', product_code AS 'ID OPERADOR', details_expiration AS 'VIGENCIA'
 FROM movii_nuevos_convenios.ws_operator
-where id in (512,514,118,174,486,487,488,497)
-or operator_id not IN (11, 15, 19, 38, 40) 
+-- paquetes solo para api
+where id in (118,174,514) -- ID PAQUETES SOLO API 
+or operator_id not IN (11, 15, 19, 38, 40)  -- EXCLUYA PAQUETES INCOMM
 and status=1
 and status_view=1
 order by microservice_url;
